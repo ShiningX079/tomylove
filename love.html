@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ถึงไอ้อ้วน</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #d63384;
+    }
+
+    .heart {
+      font-size: 80px;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      min-height: 60px;
+    }
+
+    .button {
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart">❤️</div>
+  <h1>ถึงไอ้อ้วน</h1>
+
+  <div class="message" id="message">
+    เค้ามีไยจะบอกกกก
+  </div>
+
+  <button class="button" onclick="showNextMessage()">กดปุ่มนี้เรื่อย ๆ ดูจิ 😍</button>
+
+  <script>
+    const messages = [
+      "เค้ารักอ้วนที่สุดในโลกก 🤍🤍",
+      "เค้าจะอยู่กะอ้วนตลอดไป",
+      "อย่าทิ้งเค้าไปไหนนะ 🫡",
+      "ไหนวันนี้ยิ้มยัง ยิ้มให้ดูหน่อยจิ",
+      "น่ารักที่ฉุดดด 😍😍"
+    ];
+
+    let currentIndex = 0;
+
+    function showNextMessage() {
+      const msgDiv = document.getElementById("message");
+
+      if (currentIndex < messages.length) {
+        msgDiv.textContent = messages[currentIndex];
+        currentIndex++;
+      } else {
+        msgDiv.textContent = "เจอกันใหม่ ในโค้ดที่ดีกว่าเดิม ิ ิ";
+      }
+    }
+  </script>
+
+</body>
+</html>
